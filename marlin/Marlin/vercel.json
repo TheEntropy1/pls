@@ -1,18 +1,14 @@
-{
-  "version": 2,
+"version": 2,
   "builds": [
     {
       "src": "main.py",
       "use": "@vercel/python"
+      "src": "main.py", 
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.9",
+        "pip_args": ["--no-cache-dir"]
+      }
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/main.py"
-    }
-  ],
-  "env": {
-    "PYTHONUNBUFFERED": "1"
-  }
-}
